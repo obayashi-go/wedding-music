@@ -11,7 +11,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(3, 78, 7); /* 黒（自由の翼風） */
+  background-color: #034e07; /* 黒（自由の翼風） */
   z-index: 9999;
   animation: fadeOut 3.5s forwards;
 }

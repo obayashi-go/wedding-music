@@ -35,7 +35,9 @@ export default function MusicPlayer() {
       {songs.map((song, index) => (
         <Card key={index} sx={{ my: 2 }}>
           <CardContent>
-            <Typography variant="h6">{song.title}</Typography>
+            <Typography variant="h6" fontWeight={700} textAlign="center" marginBottom={1}>
+              {song.title}
+            </Typography>
             <audio controls style={{ width: "100%" }}>
               <source src={song.src} type="audio/mpeg" />
               お使いのブラウザでは再生できません。
@@ -55,13 +57,21 @@ export default function MusicPlayer() {
               <Typography>Lyrics</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  overflow: "auto",
+                  height: "500px",
+                }}
+              >
                 <Typography sx={{ whiteSpace: "pre-line" }}>{LiricsMap[index].text}</Typography>
                 <IconButton
                   size="small"
                   onClick={() => handleCopy(LiricsMap[index].text)}
                   sx={{ ml: 1 }}
-                  aria-label="コピー"
+                  aria-label="コピーしたぞい"
                 >
                   <ContentCopyIcon fontSize="small" />
                 </IconButton>
@@ -74,7 +84,8 @@ export default function MusicPlayer() {
         open={copySuccess}
         autoHideDuration={2000}
         onClose={() => setCopySuccess(false)}
-        message="コピーしました"
+        sx={{ "& div": { justifyContent: "center", background: "#005611ff" } }}
+        message="コピーしたぞい"
       />
     </Box>
   );
