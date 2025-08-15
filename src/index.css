@@ -149,3 +149,32 @@ button:focus-visible {
     background-position: 50% 50%;
   }
 }
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  25% {
+    transform: translate(-0.5px, 0.5px);
+    text-shadow: -1px 0 rgba(44, 5, 5, 0.4), 1px 0 rgba(0, 255, 255, 0.4);
+  }
+  50% {
+    transform: translate(0.5px, -0.5px);
+    text-shadow: 1px 1px rgba(24, 3, 3, 0.801), -1px -1px rgba(43, 20, 88, 0.4);
+  }
+  75% {
+    transform: translate(-0.3px, 0.3px);
+    text-shadow: -1px 1px rgba(255, 0, 0, 0.4), 1px -1px rgba(19, 72, 72, 0.4);
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
+
+.glitch-text {
+  display: inline-block;
+  animation: glitch 2.5s infinite;
+  position: relative;
+  color: white;
+}
